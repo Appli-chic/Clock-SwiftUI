@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct WorldClockScreen: View {
-    @State private var clockListSelected = clocks
+    @State private var clockListSelected: [ClockModel] = []
     @State var editMode: EditMode = .inactive
     
     var body: some View {
@@ -19,6 +19,7 @@ struct WorldClockScreen: View {
                     WorldClockItem(clock: clock, isEditing: self.editMode == .active)
                 }
                 .onMove(perform: move)
+                .onDelete(perform: deleteItems)
             }
             .environment(\.editMode, $editMode)
             .navigationBarTitle("World Clock")
@@ -31,15 +32,16 @@ struct WorldClockScreen: View {
                     }
                 }.foregroundColor(.orange),
                                 trailing:
-                Button(action: {
-                    print("Plus icon pressed...")
-                }) {
+                NavigationLink(destination: AddClockScreen()) {
                     Image(systemName: "plus").imageScale(.large)
                 }.foregroundColor(.orange)
             )
         }
     }
     
+    func deleteItems(at offsets: IndexSet) {
+        clockListSelected.remove(atOffsets: offsets)
+    }
     
     func move(from source: IndexSet, to destination: Int) {
         clockListSelected.move(fromOffsets: source, toOffset: destination)

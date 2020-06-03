@@ -9,11 +9,13 @@
 struct ClockModel: Hashable, Codable, Identifiable {
     var id: Int
     var city: String
+    var country: String
     var timeZone: String
     
-    init(id: Int, city: String, timeZone: String) {
+    init(id: Int, city: String, country: String, timeZone: String) {
         self.id = id
         self.city = city
+        self.country = country
         self.timeZone = timeZone
     }
 }

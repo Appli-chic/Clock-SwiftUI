@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A727A92C24881921008CC881 /* AddClockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727A92B24881921008CC881 /* AddClockScreen.swift */; };
+		A727A92E24881A36008CC881 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727A92D24881A36008CC881 /* SearchBar.swift */; };
 		A74F235724877BB80039BED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F235624877BB80039BED3 /* AppDelegate.swift */; };
 		A74F235924877BB80039BED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F235824877BB80039BED3 /* SceneDelegate.swift */; };
 		A74F235B24877BB80039BED3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F235A24877BB80039BED3 /* ContentView.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A727A92B24881921008CC881 /* AddClockScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClockScreen.swift; sourceTree = "<group>"; };
+		A727A92D24881A36008CC881 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		A74F235324877BB80039BED3 /* Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74F235624877BB80039BED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A74F235824877BB80039BED3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				A74F2386248782E90039BED3 /* WorldClockScreen.swift */,
+				A727A92B24881921008CC881 /* AddClockScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				A74F238A248786000039BED3 /* WorldClockItem.swift */,
+				A727A92D24881A36008CC881 /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 				A74F238E24878BE20039BED3 /* ClockModel.swift in Sources */,
 				A74F235724877BB80039BED3 /* AppDelegate.swift in Sources */,
 				A74F2387248782E90039BED3 /* WorldClockScreen.swift in Sources */,
+				A727A92C24881921008CC881 /* AddClockScreen.swift in Sources */,
+				A727A92E24881A36008CC881 /* SearchBar.swift in Sources */,
 				A74F235924877BB80039BED3 /* SceneDelegate.swift in Sources */,
 				A74F235B24877BB80039BED3 /* ContentView.swift in Sources */,
 				A74F238B248786000039BED3 /* WorldClockItem.swift in Sources */,

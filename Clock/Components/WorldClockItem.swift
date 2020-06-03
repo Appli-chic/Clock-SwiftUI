@@ -99,6 +99,6 @@ struct WorldClockItem: View {
 
 struct WorldClockItem_Previews: PreviewProvider {
     static var previews: some View {
-        WorldClockItem(clock: ClockModel(id: 0, city: "New York", timeZone: "GMT-4"),isEditing: true)
+        WorldClockItem(clock: ClockModel(id: 0, city: "New York", country: "USA", timeZone: "GMT-4"),isEditing: true)
     }
 }
