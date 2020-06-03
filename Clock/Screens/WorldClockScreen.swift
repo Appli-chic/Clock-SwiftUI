@@ -9,15 +9,26 @@
 import SwiftUI
 
 struct WorldClockScreen: View {
+    @State private var clockListSelected = clocks
+    @State var editMode: EditMode = .inactive
+    
     var body: some View {
         NavigationView {
-            List(clocks) { clock in
-                WorldClockItem(clock: clock)
+            List() {
+                ForEach(clockListSelected, id: \.self) { clock in
+                    WorldClockItem(clock: clock, isEditing: self.editMode == .active)
+                }
+                .onMove(perform: move)
             }
+            .environment(\.editMode, $editMode)
             .navigationBarTitle("World Clock")
             .navigationBarItems(leading:
                 Button("Edit") {
-                    print("Edit tapped!")
+                    if self.editMode == .active {
+                        self.editMode = .inactive
+                    } else {
+                        self.editMode = .active
+                    }
                 }.foregroundColor(.orange),
                                 trailing:
                 Button(action: {
@@ -27,6 +38,11 @@ struct WorldClockScreen: View {
                 }.foregroundColor(.orange)
             )
         }
+    }
+    
+    
+    func move(from source: IndexSet, to destination: Int) {
+        clockListSelected.move(fromOffsets: source, toOffset: destination)
     }
 }
 

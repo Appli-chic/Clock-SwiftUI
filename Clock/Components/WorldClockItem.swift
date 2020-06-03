@@ -10,14 +10,16 @@ import SwiftUI
 
 struct WorldClockItem: View {
     var clock: ClockModel
+    var isEditing: Bool
     
     var timer = Timer.publish(every: 0.2, on: .current, in: .common).autoconnect()
     @State var time: String = ""
     @State var day: String = "Today"
     @State var hourDiff: String = "+0"
     
-    init(clock: ClockModel) {
+    init(clock: ClockModel, isEditing: Bool) {
         self.clock = clock
+        self.isEditing = isEditing
         
         _ = getCityDate()
         updateDay()
@@ -35,9 +37,11 @@ struct WorldClockItem: View {
                     Text("\(clock.city)").font(.title)
                 }
                 Spacer()
-                Text("\(time)").font(.system(size: 45))
-                    .onReceive(timer) { input in
-                        _ = self.getCityDate()
+                if !isEditing {
+                    Text("\(time)").font(.system(size: 45))
+                        .onReceive(timer) { input in
+                            _ = self.getCityDate()
+                    }
                 }
             }
         }
@@ -95,6 +99,6 @@ struct WorldClockItem: View {
 
 struct WorldClockItem_Previews: PreviewProvider {
     static var previews: some View {
-        WorldClockItem(clock: ClockModel(id: 0, city: "New York", timeZone: "GMT-4"))
+        WorldClockItem(clock: ClockModel(id: 0, city: "New York", timeZone: "GMT-4"),isEditing: true)
     }
 }
