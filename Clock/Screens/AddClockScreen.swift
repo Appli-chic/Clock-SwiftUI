@@ -24,8 +24,15 @@ struct AddClockScreen: View {
     }
     
     var body: some View {
-        VStack {
-            SearchBar(text: self.$searchText, onEdit: self.onEditing)
+        let searchBinding = Binding<String>(get: {
+            self.searchText
+        }, set: {
+            self.searchText = $0
+            self.onSearchChanging()
+        })
+        
+        return VStack {
+            SearchBar(text: searchBinding)
             ZStack {
                 List() {
                     ForEach(self.alphabet, id: \.self) { letter in
@@ -54,7 +61,7 @@ struct AddClockScreen: View {
         .padding(.top)
     }
     
-    func onEditing(isEditing: Bool) {
+    func onSearchChanging() {
         if searchText.isEmpty {
             self.clockList = clocks
         } else {

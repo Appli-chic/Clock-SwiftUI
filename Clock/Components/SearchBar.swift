@@ -10,16 +10,13 @@ import SwiftUI
 
 struct SearchBar: View {
     @Binding var text: String
-    var onEdit: (Bool) -> Void = { _ in }
     
     var body: some View {
         HStack {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .padding(.leading, 4.0)
-                TextField("Search", text: $text, onEditingChanged: { isEditing in
-                    self.onEdit(isEditing)
-                }).foregroundColor(.primary)
+                TextField("Search", text: $text).foregroundColor(.primary)
                 Image(systemName: "mic.fill")
                     .padding(.trailing, 8.0)
             }
