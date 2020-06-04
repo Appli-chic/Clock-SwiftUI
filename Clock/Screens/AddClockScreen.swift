@@ -25,22 +25,41 @@ struct AddClockScreen: View {
     
     var body: some View {
         VStack {
-            SearchBar(text: self.$searchText)
-            List() {
-                ForEach(self.alphabet, id: \.self) { letter in
-                    Section(header: Text(letter)) {
-                        ForEach(self.clockList.filter{ $0.city.prefix(1) == letter }) { clock in
-                            Text("\(clock.city), \(clock.country)").onTapGesture {
-                                self.presentation.wrappedValue.dismiss()
+            SearchBar(text: self.$searchText, onEdit: self.onEditing)
+            ZStack {
+                List() {
+                    ForEach(self.alphabet, id: \.self) { letter in
+                        Section(header: Text(letter)) {
+                            ForEach(self.clockList.filter{ $0.city.prefix(1) == letter }) { clock in
+                                Text("\(clock.city), \(clock.country)").onTapGesture {
+                                    self.presentation.wrappedValue.dismiss()
+                                }
                             }
                         }
                     }
                 }
+                .listStyle(GroupedListStyle())
+                .navigationBarTitle("Choose a city", displayMode: .inline)
+                
+                HStack {
+                    Spacer()
+                    VStack {
+                        ForEach(self.alphabet, id: \.self) { letter in
+                            Text(letter).foregroundColor(.orange).font(.system(size: 13))
+                        }
+                    }
+                }
             }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Choose a city", displayMode: .inline)
         }
         .padding(.top)
+    }
+    
+    func onEditing(isEditing: Bool) {
+        if searchText.isEmpty {
+            self.clockList = clocks
+        } else {
+            self.clockList = clocks.filter{ $0.city.contains(searchText) || $0.country.contains(searchText) }
+        }
     }
 }
 

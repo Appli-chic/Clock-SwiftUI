@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SearchBar: View {
     @Binding var text: String
-    @State private var showCancelButton: Bool = false
+    var onEdit: (Bool) -> Void = { _ in }
     
     var body: some View {
         HStack {
@@ -18,9 +18,7 @@ struct SearchBar: View {
                 Image(systemName: "magnifyingglass")
                     .padding(.leading, 4.0)
                 TextField("Search", text: $text, onEditingChanged: { isEditing in
-                    self.showCancelButton = true
-                }, onCommit: {
-                    print("onCommit")
+                    self.onEdit(isEditing)
                 }).foregroundColor(.primary)
                 Image(systemName: "mic.fill")
                     .padding(.trailing, 8.0)
