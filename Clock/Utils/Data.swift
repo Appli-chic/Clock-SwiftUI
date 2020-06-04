@@ -15,4 +15,5 @@ let clocks: [ClockModel] = [
     ClockModel(id: 5, city: "Tokyo", country: "Japan", timeZone: "GMT+9"),
     ClockModel(id: 6, city: "San Francisco", country: "USA", timeZone: "GMT-7"),
     ClockModel(id: 7, city: "Quito", country: "Ecuador", timeZone: "GMT-5"),
+    ClockModel(id: 8, city: "Barcelona", country: "Spain", timeZone: "GMT+2"),
 ]

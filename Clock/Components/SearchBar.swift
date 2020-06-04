@@ -22,6 +22,8 @@ struct SearchBar: View {
                 }, onCommit: {
                     print("onCommit")
                 }).foregroundColor(.primary)
+                Image(systemName: "mic.fill")
+                    .padding(.trailing, 8.0)
             }
             .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
             .foregroundColor(.secondary)
