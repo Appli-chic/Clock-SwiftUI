@@ -39,6 +39,27 @@ struct AddClockScreen: View {
                         Section(header: Text(letter)) {
                             ForEach(self.clockList.filter{ $0.city.prefix(1) == letter }) { clock in
                                 Text("\(clock.city), \(clock.country)").onTapGesture {
+                                    let preferences = UserDefaults.standard
+                                    
+                                    if preferences.object(forKey: CLOCK_PREFERENCE_KEY) == nil {
+                                        //  Create a new list
+                                        var data: [ClockModel] = []
+                                        data.append(clock)
+                                        let clocksData = try! JSONEncoder().encode(data)
+                                        preferences.set(clocksData, forKey: CLOCK_PREFERENCE_KEY)
+                                    } else {
+                                        // Add to the existent list
+                                        let data = preferences.object(forKey: CLOCK_PREFERENCE_KEY)
+                                        var dataArray = try! JSONDecoder().decode([ClockModel].self, from: data! as! Data)
+                                        
+                                        if !dataArray.contains(clock) {
+                                            dataArray.append(clock)
+                                        }
+                                        
+                                        let clocksData = try! JSONEncoder().encode(dataArray)
+                                        preferences.set(clocksData, forKey: CLOCK_PREFERENCE_KEY)
+                                    }
+                                    
                                     self.presentation.wrappedValue.dismiss()
                                 }
                             }

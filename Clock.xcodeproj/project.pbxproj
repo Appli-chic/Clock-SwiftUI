@@ -21,6 +21,7 @@
 		A74F238B248786000039BED3 /* WorldClockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F238A248786000039BED3 /* WorldClockItem.swift */; };
 		A74F238E24878BE20039BED3 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F238D24878BE20039BED3 /* ClockModel.swift */; };
 		A74F239124878C5E0039BED3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F239024878C5E0039BED3 /* Data.swift */; };
+		A787EC85248A171D0039477E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787EC84248A171D0039477E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		A74F238A248786000039BED3 /* WorldClockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockItem.swift; sourceTree = "<group>"; };
 		A74F238D24878BE20039BED3 /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
 		A74F239024878C5E0039BED3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A787EC84248A171D0039477E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A74F239024878C5E0039BED3 /* Data.swift */,
+				A787EC84248A171D0039477E /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				A74F235724877BB80039BED3 /* AppDelegate.swift in Sources */,
 				A74F2387248782E90039BED3 /* WorldClockScreen.swift in Sources */,
 				A727A92C24881921008CC881 /* AddClockScreen.swift in Sources */,
+				A787EC85248A171D0039477E /* Constants.swift in Sources */,
 				A727A92E24881A36008CC881 /* SearchBar.swift in Sources */,
 				A74F235924877BB80039BED3 /* SceneDelegate.swift in Sources */,
 				A74F235B24877BB80039BED3 /* ContentView.swift in Sources */,

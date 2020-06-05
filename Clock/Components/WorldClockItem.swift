@@ -12,7 +12,7 @@ struct WorldClockItem: View {
     var clock: ClockModel
     var isEditing: Bool
     
-    var timer = Timer.publish(every: 0.2, on: .current, in: .common).autoconnect()
+    var timer = Timer.publish(every: 1, on: .current, in: .common).autoconnect()
     @State var time: String = ""
     @State var day: String = "Today"
     @State var hourDiff: String = "+0"
@@ -20,10 +20,6 @@ struct WorldClockItem: View {
     init(clock: ClockModel, isEditing: Bool) {
         self.clock = clock
         self.isEditing = isEditing
-        
-        _ = getCityDate()
-        updateDay()
-        updateHourDiff()
     }
     
     var body: some View {
@@ -47,6 +43,11 @@ struct WorldClockItem: View {
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
         .padding(.vertical)
+        .onAppear() {
+            _ = self.getCityDate()
+            self.updateDay()
+            self.updateHourDiff()
+        }
     }
     
     func getCityDate() -> Date {

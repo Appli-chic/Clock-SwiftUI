@@ -36,15 +36,29 @@ struct WorldClockScreen: View {
                     Image(systemName: "plus").imageScale(.large)
                 }.foregroundColor(.orange)
             )
+                .onAppear() {
+                    let preferences = UserDefaults.standard
+                    let data = preferences.object(forKey: CLOCK_PREFERENCE_KEY)
+                    let dataArray = try! JSONDecoder().decode([ClockModel].self, from: data! as! Data)
+                    self.clockListSelected = dataArray
+            }
         }
     }
     
     func deleteItems(at offsets: IndexSet) {
         clockListSelected.remove(atOffsets: offsets)
+        saveClockListInPref()
     }
     
     func move(from source: IndexSet, to destination: Int) {
         clockListSelected.move(fromOffsets: source, toOffset: destination)
+        saveClockListInPref()
+    }
+    
+    func saveClockListInPref() {
+        let preferences = UserDefaults.standard
+               let clocksData = try! JSONEncoder().encode(clockListSelected)
+               preferences.set(clocksData, forKey: CLOCK_PREFERENCE_KEY)
     }
 }
 
