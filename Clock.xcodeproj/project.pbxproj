@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A727A92C24881921008CC881 /* AddClockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727A92B24881921008CC881 /* AddClockScreen.swift */; };
 		A727A92E24881A36008CC881 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727A92D24881A36008CC881 /* SearchBar.swift */; };
+		A72E2CBC248A6692009DC8C5 /* AlarmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72E2CBB248A6692009DC8C5 /* AlarmItem.swift */; };
 		A74F235724877BB80039BED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F235624877BB80039BED3 /* AppDelegate.swift */; };
 		A74F235924877BB80039BED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F235824877BB80039BED3 /* SceneDelegate.swift */; };
 		A74F235B24877BB80039BED3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F235A24877BB80039BED3 /* ContentView.swift */; };
@@ -22,6 +23,8 @@
 		A74F238E24878BE20039BED3 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F238D24878BE20039BED3 /* ClockModel.swift */; };
 		A74F239124878C5E0039BED3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F239024878C5E0039BED3 /* Data.swift */; };
 		A787EC85248A171D0039477E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787EC84248A171D0039477E /* Constants.swift */; };
+		A787EC87248A216C0039477E /* AlarmScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787EC86248A216C0039477E /* AlarmScreen.swift */; };
+		A787EC89248A21FD0039477E /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787EC88248A21FD0039477E /* AlarmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,7 @@
 /* Begin PBXFileReference section */
 		A727A92B24881921008CC881 /* AddClockScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClockScreen.swift; sourceTree = "<group>"; };
 		A727A92D24881A36008CC881 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A72E2CBB248A6692009DC8C5 /* AlarmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmItem.swift; sourceTree = "<group>"; };
 		A74F235324877BB80039BED3 /* Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74F235624877BB80039BED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A74F235824877BB80039BED3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 		A74F238D24878BE20039BED3 /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
 		A74F239024878C5E0039BED3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A787EC84248A171D0039477E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A787EC86248A216C0039477E /* AlarmScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmScreen.swift; sourceTree = "<group>"; };
+		A787EC88248A21FD0039477E /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 			children = (
 				A74F2386248782E90039BED3 /* WorldClockScreen.swift */,
 				A727A92B24881921008CC881 /* AddClockScreen.swift */,
+				A787EC86248A216C0039477E /* AlarmScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 		A74F2389248785EB0039BED3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A72E2CBB248A6692009DC8C5 /* AlarmItem.swift */,
 				A74F238A248786000039BED3 /* WorldClockItem.swift */,
 				A727A92D24881A36008CC881 /* SearchBar.swift */,
 			);
@@ -176,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A74F238D24878BE20039BED3 /* ClockModel.swift */,
+				A787EC88248A21FD0039477E /* AlarmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,11 +334,14 @@
 				A74F235724877BB80039BED3 /* AppDelegate.swift in Sources */,
 				A74F2387248782E90039BED3 /* WorldClockScreen.swift in Sources */,
 				A727A92C24881921008CC881 /* AddClockScreen.swift in Sources */,
+				A787EC89248A21FD0039477E /* AlarmModel.swift in Sources */,
 				A787EC85248A171D0039477E /* Constants.swift in Sources */,
 				A727A92E24881A36008CC881 /* SearchBar.swift in Sources */,
 				A74F235924877BB80039BED3 /* SceneDelegate.swift in Sources */,
+				A72E2CBC248A6692009DC8C5 /* AlarmItem.swift in Sources */,
 				A74F235B24877BB80039BED3 /* ContentView.swift in Sources */,
 				A74F238B248786000039BED3 /* WorldClockItem.swift in Sources */,
+				A787EC87248A216C0039477E /* AlarmScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

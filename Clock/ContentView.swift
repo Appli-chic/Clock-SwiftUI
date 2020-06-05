@@ -17,7 +17,7 @@ struct ContentView: View {
                     Text("World Clock")
             }
             
-            Text("The content of the second view")
+            AlarmScreen()
                 .tabItem {
                     Image(systemName: "alarm.fill").imageScale(.large)
                     Text("Alarm")

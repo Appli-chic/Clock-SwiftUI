@@ -39,8 +39,11 @@ struct WorldClockScreen: View {
                 .onAppear() {
                     let preferences = UserDefaults.standard
                     let data = preferences.object(forKey: CLOCK_PREFERENCE_KEY)
-                    let dataArray = try! JSONDecoder().decode([ClockModel].self, from: data! as! Data)
-                    self.clockListSelected = dataArray
+                    
+                    if data != nil {
+                        let dataArray = try! JSONDecoder().decode([ClockModel].self, from: data! as! Data)
+                        self.clockListSelected = dataArray
+                    }
             }
         }
     }
@@ -57,8 +60,8 @@ struct WorldClockScreen: View {
     
     func saveClockListInPref() {
         let preferences = UserDefaults.standard
-               let clocksData = try! JSONEncoder().encode(clockListSelected)
-               preferences.set(clocksData, forKey: CLOCK_PREFERENCE_KEY)
+        let clocksData = try! JSONEncoder().encode(clockListSelected)
+        preferences.set(clocksData, forKey: CLOCK_PREFERENCE_KEY)
     }
 }
 
